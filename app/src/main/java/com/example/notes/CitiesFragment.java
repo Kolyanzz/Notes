@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.BundleCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -20,13 +19,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class CitiesFragment extends Fragment {
 
+    private static final String BUNDLE_CONTENT = "bundle_content";
     private boolean isLandscape;
+    private String content;
 
     public CitiesFragment() {
         // Required empty public constructor
     }
 
-    private static final String BUNDLE_CONTENT = "bundle_content";
     public static CitiesFragment newInstance(final String content) {
         final CitiesFragment fragment = new CitiesFragment();
         final Bundle args = new Bundle();
@@ -34,7 +34,6 @@ public class CitiesFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    private String content;
 
     // activity создана, можно к ней обращаться. Выполним начальные действия
     @Override
